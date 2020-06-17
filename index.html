@@ -14,6 +14,82 @@
 
         console.log(isUserInAttendance);
 
+        // initialize an empty array
+        let cars = [];
+
+        let smallCar = {
+            engineSize: 4,
+            displacement: 2,
+            fuelType: 'diesel'
+
+
+        };
+
+        let smallTruck = {
+            engineSize: 6,
+            displacement: 4,
+            fuelType: 'regular'
+
+
+        }
+
+
+        let vehicle = [];
+        vehicles.push(smallCar);
+        vehicles.push(smallTruck);
+
+        function getEfficiencyRating (vehicle) {
+            let rating = 0;
+
+            if (vehicle.engineSize < 5) {
+                rating = 8;
+
+
+            }
+
+            if (vehicle.engineSize >= 5 && vehicle.engineSize < 7) {
+                rating = 6;
+            }
+
+            switch (vehicle.engineSize) {
+                case 1: 
+                case 2: 
+                case 3: 
+                case 4: 
+                    rating = 8;
+                    break;
+                case 5: 
+                case 6: 
+                    rating = 6;
+                    break;
+                case 7: 
+                case 8: 
+                    rating = 4;
+                    break;
+
+                // to be filled in after break
+                default:
+                    rating = 0;
+            }
+
+
+            if (vehicle.fuelType == 'diesel') {
+                // increment += ++
+                rating = rating + 1;
+
+            }
+            return rating;
+        }
+
+        console.log({vehicles});
+
+
+        vehicles.forEach(function (vehicle) {
+            let result = getEfficiencyRating(vehicle);
+            console.log({result})
+        });
+
+
     </script>
 
 </head>
